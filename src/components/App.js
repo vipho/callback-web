@@ -1,13 +1,17 @@
-import React, { Component } from 'react';
+import { h, Fragment, Component } from 'preact'
+
+import Button from './Button'
+import Window from './Window'
 
 class App extends Component {
     render() {
         return (
-            <div>
-                <h1>My React App!</h1>
-            </div>
-        );
+            <>
+                <Button/>
+                <Window/>
+            </>
+        )
     }
 }
 
-export default App;
+export default App

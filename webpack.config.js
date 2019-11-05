@@ -15,9 +15,7 @@ module.exports = {
                 exclude: /node_modules/,
                 use: {
                     loader: 'babel-loader',
-                    options: {
-                        presets: ['@babel/preset-env'],
-                    },
+                    // options: {},
                 },
             },
             {
@@ -25,10 +23,32 @@ module.exports = {
                 use: ['pug-loader'],
             },
             {
-                test: /\.(css|scss)$/,
-                use: ['sass-loader'],
+                test: /\.s[ac]ss$/i,
+                use: [
+                    'style-loader',
+                    'css-loader',
+                    'sass-loader',
+                ],
             },
+            {
+                test: /\.(gif|png|jpe?g)$/i,
+                use: [
+                    'file-loader',
+                ],
+            },
+            {
+                test: /\.svg$/,
+                loader: 'preact-svg-loader',
+            }
         ]
+    },
+    resolve: {
+        alias: {
+            "react": "preact/compat",
+            "react-dom/test-utils": "preact/test-utils",
+            "react-dom": "preact/compat",
+            // Must be below test-utils
+        },
     },
     optimization: {
         minimizer: [new UglifyJsPlugin()],

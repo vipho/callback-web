@@ -4,13 +4,22 @@ import Button from './Button'
 import Window from './Window'
 
 class App extends Component {
+    state = {
+        isWindowOpen: false,
+    }
+
     render() {
         return (
             <>
-                <Button/>
-                <Window/>
+                <Button onClick={this.handleClick}/>
+                { this.state.isWindowOpen ? <Window/> : null }
             </>
         )
+    }
+
+    handleClick = () => {
+        this.setState({ isWindowOpen: !this.state.isWindowOpen })
+        console.log(123)
     }
 }
 

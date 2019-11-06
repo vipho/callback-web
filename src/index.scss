@@ -1,10 +1,10 @@
-input:focus,
-select:focus,
-textarea:focus,
-button:focus {
-  outline: none;
-}
-
 .vipho-callback {
-  @import '~reset-css';
+  font-family: Helvetica, Arial, sans-serif;
+
+  input:focus,
+  select:focus,
+  textarea:focus,
+  button:focus {
+    outline: none;
+  }
 }

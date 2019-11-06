@@ -6,7 +6,7 @@
   "author": "VIPHO",
   "license": "MIT",
   "scripts": {
-    "serve": "webpack-dev-server --mode development --open --hot",
+    "serve": "webpack-dev-server --mode development --open --hot --host 0.0.0.0",
     "build": "webpack --mode production"
   },
   "devDependencies": {

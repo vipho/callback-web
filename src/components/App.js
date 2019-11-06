@@ -19,7 +19,6 @@ class App extends Component {
 
     handleClick = () => {
         this.setState({ isWindowOpen: !this.state.isWindowOpen })
-        console.log(123)
     }
 }
 

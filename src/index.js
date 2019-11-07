@@ -5,7 +5,7 @@ import initialStore from './store/initialStore'
 
 import './index.scss'
 
-initialStore.setMainColor('green')
+initialStore.mainColor = 'green'
 const el = document.createElement('div')
 el.className = 'vipho-callback';
 document.body.appendChild(el)

@@ -42,6 +42,9 @@ module.exports = {
             }
         ]
     },
+    devServer: {
+        port: 9000,
+    },
     resolve: {
         alias: {
             "react": "preact/compat",

@@ -1,5 +1,6 @@
 .vipho-callback-window {
   position: fixed;
+  z-index: 99999;
   width: 256px;
   box-sizing: border-box;
   padding: 16px;
@@ -8,6 +9,7 @@
   bottom: 32px + 64px + 16px;
   box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.15), 0px 0px 4px rgba(0, 0, 0, 0.1);
   text-align: center;
+  background: #fff;
 }
 
 .vipho-callback-window__heading {
@@ -30,11 +32,11 @@
 }
 
 .vipho-callback-window__button {
-  border: none;
-  background: transparent;
   border-bottom: 1px solid;
   font-size: 16px;
   box-sizing: border-box;
   cursor: pointer;
   padding-bottom: 4px;
+  margin: 0;
+  display: inline-block;
 }

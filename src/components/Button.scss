@@ -1,6 +1,7 @@
 .vipho-callback-button {
   $size: 64px;
   position: fixed;
+  z-index: 99999;
   bottom: 32px;
   right: 32px;
   width: $size;
@@ -8,7 +9,14 @@
   border-radius: $size/2;
   border: none;
   cursor: pointer;
-  background-image: url(../assets/phone.png);
-  background-position: center center;
-  background-repeat: no-repeat;
+  padding: 0;
+  //background-image: url(../assets/phone.png);
+  //background-position: center center;
+  //background-repeat: no-repeat;
+}
+
+.vipho-callback-button__svg {
+  height: 40px;
+  width: 40px;
+  //display: none;
 }

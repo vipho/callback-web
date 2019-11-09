@@ -9,6 +9,8 @@ export default class Window extends Component {
         phone: '+'
     }
 
+    _busy = false
+
     render() {
         if (initialStore.isPhoneSent) {
             return (
@@ -28,12 +30,12 @@ export default class Window extends Component {
                        onInput={this.onInput}
                        onKeyPress={this.handleKeyPress}
                 />
-                <button className="vipho-callback-window__button"
-                        style={{borderColor: initialStore.mainColor}}
-                        onClick={this.sendPhone}
+                <p className="vipho-callback-window__button"
+                   style={{borderColor: initialStore.mainColor}}
+                   onClick={this.sendPhone}
                 >
                     Запросить
-                </button>
+                </p>
             </div>
         )
     }
@@ -51,13 +53,17 @@ export default class Window extends Component {
     }
 
     sendPhone = () => {
+        if (this._busy) {
+            return
+        }
         if (this.state.phone.length < 2) {
             alert('Необходимо ввести номер телефона')
             return
         }
+        this._busy = true
         initialStore.sendPhone(this.state.phone)
             .then((Response) => {
-                if (!Response.ok) {
+                if (Response.ok) {
                     initialStore.isPhoneSent = true
                 } else {
                     alert('Произошла ошибка при отправке')
@@ -65,6 +71,9 @@ export default class Window extends Component {
             })
             .catch(() => {
                 alert('Произошла ошибка при отправке')
+            })
+            .finally(() => {
+                this._busy = false
             })
     }
 }

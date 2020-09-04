@@ -31,7 +31,7 @@
   "dependencies": {
     "mobx": "^5.14.2",
     "mobx-preact": "^3.0.0",
-    "node-sass": "^4.13.0",
+    "node-sass": "^4.13.1",
     "preact": "^10.0.4",
     "pug": "^2.0.4",
     "reset-css": "^5.0.1"
